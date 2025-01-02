@@ -36,6 +36,12 @@ jobs:
         context: ./mern/backend # Directory where your backend dockerfile is located
         push: true
         tags: sandip1991/mern-docker-compose-backend
+    - name: Install Docker Compose
+      run: |
+        sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -Po '(?<=tag_name": "v)[^"]*')" \
+        -o /usr/local/bin/docker-compose
+        sudo chmod +x /usr/local/bin/docker-compose
+
 
     - name: Deploy application
       run: |
