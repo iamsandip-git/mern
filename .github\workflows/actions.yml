@@ -26,16 +26,16 @@ jobs:
     - name: Build and push frontend Docker image
       uses: docker/build-push-action@v5
       with:
-        context: ./Client # Directory where your frontend dockerfile is located
+        context: ./mern/frontend # Directory where your frontend dockerfile is located
         push: true
-        tags: (Dockerhub_username)/(image_name)
+        tags: sandip1991/mern-docker-compose-frontend
         
     - name: Build and push Backend Docker image
       uses: docker/build-push-action@v5
       with:
-        context: ./Server # Directory where your backend dockerfile is located
+        context: ./mern/backend # Directory where your backend dockerfile is located
         push: true
-        tags: (Dockerhub_username)/(image_name)
+        tags: sandip1991/mern-docker-compose-backend
 
     - name: Deploy application
       run: |
