@@ -28,14 +28,14 @@ jobs:
       with:
         context: ./mern/frontend # Directory where your frontend dockerfile is located
         push: true
-        tags: sandip1991/mern-docker-compose-frontend
+        tags: sandip1991/mern-docker-compose-frontend:latest
         
     - name: Build and push Backend Docker image
       uses: docker/build-push-action@v5
       with:
         context: ./mern/backend # Directory where your backend dockerfile is located
         push: true
-        tags: sandip1991/mern-docker-compose-backend
+        tags: sandip1991/mern-docker-compose-backend:latest
     - name: Install Docker Compose
       run: |
         sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -Po '(?<=tag_name": "v)[^"]*')" \
