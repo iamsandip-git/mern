@@ -15,8 +15,8 @@ jobs:
     - name: Tailscale
       uses: tailscale/github-action@v3
       with:
-        oauth-client-id: kGxaMAed5221CNTRL
-        oauth-secret: tskey-client-kGxaMAed5221CNTRL-8bxVctdYk1FnFEK53U7w1FfVFY2r3YsDW
+        oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
+        oauth-secret: ${{ secrets.TAILSCALE_CLIENT_SECRET }}
         tags: tag:ci
       # Setup SSH to the server
     - name: Install SSH key
