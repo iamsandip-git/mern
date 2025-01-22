@@ -3,7 +3,7 @@ name: CI/CD Pipeline # This script builds image ,push image and run using docker
 on:
   push:
     branches:
-      - sandip
+    - sandip
 jobs:
   build:
     runs-on: ubuntu-latest
