@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
+  #Step 1: Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v2
-      # Setup Tailscale
+  #Step 2: Setup Tailscale
       - name: Tailscale
         uses: tailscale/github-action@v3
         with:
           oauth-client-id: kGxaMAed5221CNTRL
           oauth-secret: tskey-client-kGxaMAed5221CNTRL-8bxVctdYk1FnFEK53U7w1FfVFY2r3YsDW
           tags: tag:ci
-      # Setup SSH to the server
+  #Step 3: Setup SSH to the server
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
