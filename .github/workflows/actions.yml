@@ -28,6 +28,7 @@ jobs:
   #Step 2: Run SonarQube Analysis
     - name: Run SonarQube Analysis
       run: |
+        git pull origin sandip 
         sonar-scanner \
           -Dsonar.projectKey=sonarmern \
           -Dsonar.sources=. \
